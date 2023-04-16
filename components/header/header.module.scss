@@ -5,11 +5,13 @@
   width: 100%;
   z-index: 1;
   // color: var(--white);
-  color: var(--theme-secondary);
+  color: var(--lightBlue);
   padding: mobile-vw(20px) 0;
+  text-transform: uppercase;
+  background-color: rgb(0, 0, 14, 0.8);
 
   @include desktop {
-    padding: desktop-vw(40px) 0;
+    padding: desktop-vw(10px) 0;
   }
 
   .head {
@@ -17,5 +19,31 @@
     justify-content: space-between;
     position: relative;
     z-index: 2;
+
+    button img {
+      padding: 0.6vw;
+      background-color: var(--neonBlue);
+      width: 4vw;
+    }
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+
+    & p {
+      font-size: 2vw;
+      letter-spacing: 0.2vw;
+      color: var(--neonBlue);
+
+      &:hover {
+        cursor: default;
+      }
+    }
+
+    & img {
+      background-color: none;
+      width: 4vw;
+    }
   }
 }

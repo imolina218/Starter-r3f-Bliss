@@ -1,22 +1,17 @@
-import * as Accordion from '@radix-ui/react-accordion'
-import {
-  Image,
-  Kinesis,
-  Link,
-  Marquee,
-  MarqueeScroll,
-  Slider,
-} from '@studio-freight/compono'
+import { Image, Kinesis, Slider } from '@studio-freight/compono'
 import { useMediaQuery, useRect } from '@studio-freight/hamo'
 import { useLenis } from '@studio-freight/react-lenis'
 import { types } from '@theatre/core'
+import { MarqueeScroll } from 'components/marquee-scroll'
+import { Sticky } from 'components/sticky'
 import { Layout } from 'layouts/default'
 import { useSheet } from 'lib/theatre'
 import { useTheatre } from 'lib/theatre/hooks/use-theatre'
 import { useRef } from 'react'
+import { Marquee } from '../../components/marquee'
 import s from './home.module.scss'
 
-const devs = [
+/* const devs = [
   {
     name: 'Franco',
     position: 'Pizza of Pizza',
@@ -37,6 +32,29 @@ const devs = [
     position: 'Avoids owning projects',
     image: 'https://assets.studiofreight.com/devs/guido.png',
   },
+] */
+
+//TODO not array of objects, just a simple array
+const details = [
+  {
+    detail: 'Latest technology x8 times faster than regular optical fiber',
+  },
+  {
+    detail: 'Longest transatlantic underwater  connection infrastructure',
+  },
+  {
+    detail: 'Fastest growing underground connection wired',
+  },
+  {
+    detail: 'Cutting edge scientists working in the latest innovations',
+  },
+  {
+    detail: 'Biggest fiber-optic cable manufacturer and supplier in the world',
+  },
+  {
+    detail:
+      'Safest servers military grade to ensure the quality of VPN and proxies',
+  },
 ]
 
 export default function Home() {
@@ -56,7 +74,7 @@ export default function Home() {
       )}px<br>width:${width}px<br>height:${height}px<br>right:${Math.round(
         left + width
       )}px<br>bottom:${Math.round(top + height)}px`
-      rectRef.current.innerHTML = string
+      // rectRef.current.innerHTML = string
     },
     [rect],
     1
@@ -86,92 +104,251 @@ export default function Home() {
     <Layout theme="light">
       <section className={s.home} id="top">
         <div className={s.theatreRect} ref={theatreRectRef} />
-        {isDesktop === true ? (
+        {/* {isDesktop === true ? (
           <span>only desktop and no SSR</span>
         ) : (
           <span>only mobile and SSR</span>
-        )}
-        <Marquee className={s.marquee} repeat={3}>
-          <span className={s.item}>marquee stuff that scroll continuously</span>
-        </Marquee>
-        <MarqueeScroll className={s.marquee} inverted repeat={4}>
-          <span className={s.item}>HOLA JORDAN</span>
-        </MarqueeScroll>
-        <Link href="#kinesis">scroll to kinesis</Link>
-        <Accordion.Root type="single" collapsible>
-          {Array(2)
-            .fill({ header: 'this is header', body: 'this is body' })
-            .map((item, key) => (
-              <Accordion.Item
-                key={key + 1}
-                value={key + 1}
-                className={s.accordion}
-              >
-                <Accordion.Header>
-                  <Accordion.Trigger>header</Accordion.Trigger>
-                </Accordion.Header>
-                <Accordion.Content className={s.accordion__content}>
-                  <div>body</div>
-                </Accordion.Content>
-              </Accordion.Item>
-            ))}
-        </Accordion.Root>
-        <Slider emblaApi={{ align: 'center', skipSnaps: false }}>
+        )} */}
+        <Kinesis speed={40}>
+          <div className={s['hero']}>
+            <h1>bliss</h1>
+            <h2>Fastest home optic fiber internet supplier</h2>
+          </div>
+
+          <div id={s['plan-over-view']} className={s['plan-over-view']}>
+            <div className={s.overView}>
+              <p>
+                Based on the latest optic fiber technology operating worldwide
+                with accessible base connection of 10gb/s
+              </p>
+            </div>
+
+            <span></span>
+            <Marquee className={s.marquee} repeat={3} duration={14}>
+              <span className={s.item}>
+                {' '}
+                <span className={s.plan1}>10 gb/s</span> ---{' '}
+                <span className={s.plan2}>50 gb/s</span> ---{' '}
+                <span className={s.plan3}>100 gb/s</span> ---
+              </span>
+            </Marquee>
+            <span></span>
+          </div>
+        </Kinesis>
+
+        <div id={s['vertical']} className={s['vertical']}>
+          <div className={s['vertical-container']}>
+            <div className={s['vertical-content']}>
+              <Sticky start="400" end="740">
+                <div className={s['col-left']}>
+                  <h3>
+                    why <span>BLISS</span>?
+                  </h3>
+                </div>
+              </Sticky>
+              <div className={s['col-right']}>
+                <div className={s['vertical-item']}>
+                  <p>
+                    “Rising the industry standard BLISS breaks the internet
+                    suppliers market.”{' '}
+                  </p>
+                  <span>- by WIRED</span>
+                </div>
+                <div className={s['vertical-item']}>
+                  <p>
+                    “Offers the best combination of price and data speeds.”{' '}
+                  </p>
+                  <span>- by TechCrunch</span>
+                </div>
+                <div className={s['vertical-item']}>
+                  <p>
+                    “The best internet service provider, especially if you work
+                    from home.”{' '}
+                  </p>
+                  <span>- by The Verge</span>
+                </div>
+                <div className={s['vertical-item']}>
+                  <p>
+                    “With gaming and streaming, an efficient latency rate is
+                    important.”{' '}
+                  </p>
+                  <span>- by VentureBeat</span>
+                </div>
+                <div className={s['vertical-item']}>
+                  <p>
+                    “Coverage is paramount when it comes to which internet
+                    provider is best for you.”{' '}
+                  </p>
+                  <span>- by The Financial Times</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className={s['about-pros']}>
+          {/* <MarqueeScroll className={s.marquee} inverted speed={0.2} repeat={4}>
+            <span className={s.item}>easy set up</span>
+          </MarqueeScroll> */}
+          <MarqueeScroll className={s.marquee} repeat={4}>
+            <span className={s.item}>--- symmetrical</span>
+          </MarqueeScroll>
+          <MarqueeScroll className={s.marquee} inverted repeat={4}>
+            <span className={s.item}>--- best latency</span>
+          </MarqueeScroll>
+          <MarqueeScroll className={s.marquee} repeat={4}>
+            <span className={s.item}>--- high bandwidth</span>
+          </MarqueeScroll>
+        </div>
+
+        <Kinesis speed={40}>
+          <div className={s['our-history']}>
+            <div></div>
+            <div className={s['history-container']}>
+              <h3>Our history</h3>
+              <p>
+                <span>As technology evolves, so has bliss for 18 years.</span>
+                <span>
+                  Being the leading Internet provider for the largest technology
+                  companies and governments position us as one of the safest and
+                  fastest Internet connection providers.
+                </span>
+                <span>Now we deliver it to your house.</span>
+              </p>
+            </div>
+          </div>
+        </Kinesis>
+
+        <Slider
+          emblaApi={{
+            align: 'center',
+            skipSnaps: false,
+            autoplay: false,
+            loop: true,
+          }}
+        >
           {({ scrollPrev, scrollNext, emblaRef }) => {
             return (
               <div className={s.slider}>
                 <div className={s['slider-header']}>
-                  <p>Slider Hader</p>
-                  <p>Slider Title</p>
+                  <p>Infraestructure</p>
+                </div>
+                <div className={s['slide-buttons']}>
+                  <button onClick={scrollPrev}>&lt;&lt; prev</button>
+                  <button onClick={scrollNext}>next &gt; &gt;</button>
                 </div>
                 <Slider.Slides ref={emblaRef}>
-                  {devs.map(({ image, name, position }, idx) => (
+                  {details.map(({ image, detail }, idx) => (
                     <div className={s['slide']} key={`slide-item-${idx}`}>
                       <div className={s['slide-inner']}>
                         <Image
-                          src={image}
+                          src={'/0' + (idx + 1) + '.webp'}
+                          /* `/0{idx + 1}.webp` doesn't work, why ?*/
                           alt=""
-                          width="300"
-                          height="300"
+                          width="400"
+                          height="800"
                           className={s['slide-img']}
                           size="20vw"
                         />
-                        <p className={s['slide-title']}>{name}</p>
-                        <p className={s['slide-text']}>{position}</p>
+
+                        <p className={s['number']}>0{idx + 1}</p>
+                        <p className={s['details']}>{detail}</p>
                       </div>
                     </div>
                   ))}
                 </Slider.Slides>
-                <button onClick={scrollPrev} className={s['slide-buttons']}>
-                  previous
-                </button>
-                <button onClick={scrollNext} className={s['slide-buttons']}>
-                  next
-                </button>
               </div>
             )
           }}
         </Slider>
 
-        <Link id="kinesis" href="#top">
-          <Kinesis className={s.kinesis}>
-            <div className={s.item}>kinesis</div>
-          </Kinesis>
-        </Link>
+        <div className={s['choose-plan']}>
+          <div></div>
+          <div className={s['plans-container']}>
+            <p className={s['title']}>Choose Your Plan</p>
 
-        <div style={{ height: '100vh' }} id="rect">
-          <div
-            ref={(node) => {
-              setRef(node)
-              rectRef.current = node
-            }}
-            style={{
-              width: '250px',
-              height: '250px',
-              backgroundColor: 'cyan',
-              margin: '0 auto',
-            }}
-          ></div>
+            <div className={s['plans-array']}>
+              <button className={s['plan-button']}>beginner</button>
+              <button className={s['plan-button']}>enhance</button>
+              <button className={s['plan-button']}>ultimate</button>
+            </div>
+
+            <div className={s['plan-container']}>
+              <div className={s['characteristics']}>
+                <ul>
+                  <li> 10 GB/s symetryc optic fiber</li>
+                  <li> Ethernet 2.4 GHz and 5.4 GHz </li>
+                  <li> Wi-Fi 2.4 GHz</li>
+                  <li> VPN and proxys not included </li>
+                </ul>
+              </div>
+              <div className={s['price']}>
+                <p>
+                  $42<span>/mo.</span>
+                </p>
+              </div>
+            </div>
+            <div className={s['select-plan']}>
+              <button>select plan</button>
+            </div>
+          </div>
+        </div>
+
+        <div className={s['billing-information']}>
+          <div className={s['billing-container']}>
+            <div className={s['plan-information']}>
+              <p>Billing Information</p>
+              <p>Beginner plan</p>
+              <p>
+                $42<span>/mo.</span>
+              </p>
+            </div>
+
+            <form className={s['card-information']}>
+              <div className={s['payment-network']}>
+                <select name="select">
+                  <option value="american express">american express</option>
+                  <option value="visa">visa</option>
+                  <option value="discover">discover</option>
+                  <option value="mastercard">mastercard</option>
+                </select>
+
+                {/* <input list="cards" id="myCard" name="myCard" />
+                <datalist id="cards">
+                  <option value="mastercard" selected></option>
+                  <option value="discover"></option>
+                  <option value="visa"></option>
+                </datalist> */}
+              </div>
+
+              <div className={s['card-name']}>
+                <label htmlFor="">Name:</label>
+                <input type="text" />
+              </div>
+              <div className={s['card-number']}>
+                <label htmlFor="">Card Number:</label>
+                <input type="number" />
+              </div>
+              <div className={s['expiration']}>
+                <label htmlFor="">Expiration:</label>
+                <input type="number" placeholder="mm" />
+                <input type="number" placeholder="yy" />
+              </div>
+              <div className={s['cvc']}>
+                <label htmlFor="">CVC/CVV:</label>
+                <input type="number" placeholder="- - -" />
+              </div>
+            </form>
+            <form className={s['user-information']}>
+              <input type="text" placeholder="full name" />
+              <input type="text" placeholder="city" />
+              <input type="number" placeholder="zip code" />
+              <input type="text" placeholder="address" />
+              <input type="number" placeholder="phone number" />
+            </form>
+
+            <button>purchase</button>
+          </div>
         </div>
       </section>
     </Layout>

@@ -30,9 +30,10 @@ export function Navigation() {
   return (
     <Lenis className={cn(s.navigation, !navIsOpened && s.closed)}>
       <div className={s.content}>
-        <Link href="/">home</Link>
-        <Link href="/gsap">gsap</Link>
-        <Link href="/contact">contact</Link>
+        <Link href="#">bliss</Link>
+        <Link href="#">about us</Link>
+        <Link href="#">reviews</Link>
+        <Link href="#">plans</Link>
       </div>
     </Lenis>
   )

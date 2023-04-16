@@ -3,9 +3,15 @@
 // Each color filled here will create a css variable exposed globally
 
 $colors: (
-  'white': rgb(255, 255, 255),
-  'black': rgb(0, 0, 0),
-  'red': rgb(255, 0, 0),
+  'backgroundAlpha': rgb(0, 0, 14, 0),
+  'background': rgb(0, 0, 14),
+  'navBackground': rgb(0, 0, 14, 0.8),
+  'bgBlueOpacity': rgb(0, 0, 14, 0.4),
+  'lightBlue': rgb(222, 255, 255),
+  'neonBlue': rgb(0, 183, 202),
+  'neonBlueOpacity': rgb(0, 183, 202, 0.8),
+  'neonGreen': rgb(0, 202, 0),
+  'neonPink': rgb(242, 0, 112),
 );
 
 :root {

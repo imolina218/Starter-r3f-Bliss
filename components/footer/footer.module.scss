@@ -1,9 +1,36 @@
 .footer {
-  color: var(--theme-primary);
-  background-color: var(--theme-secondary);
   padding: mobile-vw(20px) 0;
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: repeat(3, 1fr);
+  color: var(--lightBlue);
+  font-size: 1.6vmin;
 
   @include desktop {
-    padding: desktop-vw(40px) 0;
+    padding: desktop-vw(40px) desktop-vw(40px);
+  }
+
+  & div * {
+    display: flex;
+    align-items: center;
+  }
+  & svg {
+    height: 4vmin;
+    width: 4vmin;
+    margin-right: 0.4vw;
+  }
+
+  .company-info span {
+    font-size: 3vmin;
+  }
+  .contact-info div:not(:first-child) {
+    margin-top: 2vh;
+  }
+  .company-about span {
+    font-weight: bolder;
+    font-size: 2vmin;
+  }
+  .company-about {
+    font-weight: lighter;
   }
 }

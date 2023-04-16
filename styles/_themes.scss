@@ -8,14 +8,16 @@
 // you must use colors filled in _colors.scss but any other colors could works
 $themes: (
   'light': (
-    'primary': map.get($colors, 'white'),
-    'secondary': map.get($colors, 'black'),
-    'contrast': map.get($colors, 'red'),
+    'primary': map.get($colors, 'background'),
+    // backgroundAlpha
+    'secondary': map.get($colors, 'lightBlue'),
+    'contrast': map.get($colors, 'neonBlue'),
   ),
   'dark': (
-    'primary': map.get($colors, 'black'),
-    'secondary': map.get($colors, 'white'),
-    'contrast': map.get($colors, 'red'),
+    'primary': map.get($colors, 'background'),
+    // backgroundAlpha
+    'secondary': map.get($colors, 'lightBlue'),
+    'contrast': map.get($colors, 'neonBlue'),
   ),
 );
 

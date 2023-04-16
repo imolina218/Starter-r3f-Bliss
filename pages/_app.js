@@ -35,8 +35,10 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     if (navIsOpened) {
       lenis?.stop()
+      //document.documentElement.style.removeProperty('overflow')
     } else {
       lenis?.start()
+      //document.documentElement.style.setProperty('overflow', 'hidden')
     }
   }, [lenis, navIsOpened])
 
