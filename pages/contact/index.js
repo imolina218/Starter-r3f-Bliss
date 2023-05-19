@@ -35,15 +35,15 @@ export async function getStaticProps() {
     items: [
       {
         title: 'fixed slide title 1',
-        text: 'fixed slide text 1',
+        text: 'asdasdasdasdasdasd',
       },
       {
         title: 'fixed slide title 2',
-        text: 'fixed slide text 2',
+        text: 'fidfgdfgdfgfdgdfg',
       },
       {
         title: 'fixed slide title 3',
-        text: 'fixed slide text 3',
+        text: 'iasdunasidbsadoasub',
       },
       {
         title: 'fixed slide title 4',

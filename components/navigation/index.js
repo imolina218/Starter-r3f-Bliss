@@ -11,7 +11,6 @@ export function Navigation() {
     (state) => [state.navIsOpen, state.setNavIsOpen],
     shallow
   )
-
   const router = useRouter()
 
   useEffect(() => {
@@ -28,9 +27,10 @@ export function Navigation() {
 
   return (
     <div className={cn(s.navigation, !navIsOpen && s.closed)}>
-      <Link href="/">home</Link>
-      <Link href="/gsap">gsap</Link>
-      <Link href="/contact">contact</Link>
+      <Link href="#hero">bliss</Link>
+      <Link href="#history">about us</Link>
+      <Link href="#vertical">reviews</Link>
+      <Link href="#plan">plans</Link>
     </div>
   )
 }

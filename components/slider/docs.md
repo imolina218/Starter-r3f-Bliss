@@ -20,7 +20,7 @@
     slidesToScroll: 1,
     skipSnaps: false,
     startIndex: 1,
-    loop: true,
+    loop: false,
     autoScroll: true,
   }}
 >
@@ -39,7 +39,7 @@
           ))}
         </Slider.Slides>
         <button onClick={scrollPrev} className={s['slide-buttons']}>
-          previous
+          prev
         </button>
         <button onClick={scrollPrev} className={s['slide-buttons']}>
           next

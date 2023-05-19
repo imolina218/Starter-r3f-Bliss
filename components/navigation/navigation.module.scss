@@ -1,15 +1,37 @@
 .navigation {
   height: 0;
-  background-color: green;
+  background-color: var(--navBackground);
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  transition: 1s height var(--ease-out-expo);
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  gap: mobile-vh(60px);
+  transition: 1s height var(--ease-out-expo);
+
+  @include desktop {
+    gap: desktop-vh(30px);
+  }
+
+  & a {
+    font-size: 8vw;
+    border-bottom: 1px solid rgb(0, 0, 0, 0);
+    transition-duration: 0.3s;
+
+    @include desktop {
+      font-size: 3vw;
+    }
+  }
+  & a:hover {
+    cursor: pointer;
+    color: var(--neonBlue);
+    border-bottom: 1px solid var(--lightBlue);
+    transition-duration: 0.3s;
+  }
 
   &.closed {
     pointer-events: none;

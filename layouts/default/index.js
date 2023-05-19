@@ -1,4 +1,7 @@
 import { Lenis, useLenis } from '@studio-freight/react-lenis'
+import '@theatre/core'
+//import extension from '@theatre/r3f/dist/extension'
+//import studio from '@theatre/studio'
 import cn from 'clsx'
 import { Cursor } from 'components/cursor'
 import { CustomHead } from 'components/custom-head'
@@ -7,7 +10,11 @@ import { Header } from 'components/header'
 import { Scrollbar } from 'components/scrollbar'
 import Router from 'next/router'
 import { useEffect } from 'react'
+
 import s from './layout.module.scss'
+
+/* studio.initialize()
+studio.extend(extension) */
 
 export function Layout({
   seo = { title: '', description: '', image: '', keywords: '' },

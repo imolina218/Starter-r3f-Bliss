@@ -52,10 +52,96 @@
 
 .home {
   // height: 300vh;
-  padding-top: var(--header-height);
+  background-color: var(--backgroundAlpha);
+
+  .hero {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 16vh;
+    text-transform: uppercase;
+
+    & h1 {
+      color: var(--neonBlue);
+      font-size: 30vw;
+      letter-spacing: 2vw;
+
+      @include desktop {
+        font-size: desktop-vw(380px);
+      }
+
+      &:hover {
+        cursor: default;
+      }
+    }
+
+    & h2 {
+      font-weight: lighter;
+      font-size: 3vw;
+      letter-spacing: 0.2vw;
+      background-color: var(--neonBlueOpacity);
+      padding: 0.5vh 2vw;
+
+      &:hover {
+        cursor: default;
+      }
+    }
+  }
+
+  .plan-over-view {
+    height: 140vh;
+    padding: 0 3.6vw;
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-transform: uppercase;
+
+    @include desktop {
+      height: 160vh;
+      width: 50vw;
+    }
+
+    & p {
+      font-weight: bolder;
+      font-size: 8vw;
+      margin-bottom: mobile-vh(20px);
+
+      @include desktop {
+        font-size: 3.2vw;
+      }
+    }
+
+    span {
+      border-top: 1px solid var(--lightBlue);
+      border-bottom: 1px solid var(--lightBlue);
+    }
+  }
 
   .marquee {
-    font-size: 6vw;
+    font-size: 18vw;
+    text-transform: uppercase;
+
+    @include desktop {
+      font-size: 8vw;
+    }
+
+    & span {
+      text-shadow: 1px 1px 4px var(--lightBlue);
+      border: none;
+    }
+    & span .plan1 {
+      color: rgb(0, 183, 202);
+    }
+    & span .plan2 {
+      color: rgb(0, 202, 0);
+    }
+    & span .plan3 {
+      color: rgb(242, 0, 112);
+    }
 
     .item {
       margin-right: mobile-vw(24px);
@@ -66,76 +152,676 @@
     }
   }
 
-  .kinesis {
-    > * {
-      width: 250px;
-      height: 250px;
-      background-color: red;
-      margin: 0 auto;
+  #vertical {
+    height: 260vh;
+    width: 100vw;
+
+    @include desktop {
+      height: 240vh;
+    }
+  }
+
+  .vertical {
+    color: var(--lightBlue);
+    padding: 12vh 0;
+    background-color: var(--bgBlueOpacity);
+    box-shadow: 1px 0px 92px 75px var(--bgBlueOpacity);
+    -webkit-box-shadow: 1px 0px 92px 75px var(--bgBlueOpacity);
+    -moz-box-shadow: 1px 0px 92px 75px var(--bgBlueOpacity);
+
+    & .vertical-content {
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
+    }
+
+    & .vertical-container {
+      width: 95vw;
+      margin: auto;
+    }
+
+    & h3 {
+      padding-left: 1vw;
+      text-transform: uppercase;
+      font-size: 12vw;
+      border-left: 2px solid rgb(0, 183, 202);
+
+      @include desktop {
+        font-size: 8vw;
+      }
+    }
+    & span {
+      color: var(--neonBlue);
+    }
+
+    & .col-left {
+      height: 100vh;
+      width: 50%;
+    }
+    & .col-right {
+      width: 60%;
+
+      & span {
+        color: var(---lightBlue);
+      }
+
+      @include desktop {
+        width: 50%;
+      }
+    }
+
+    & .vertical-item {
+      font-weight: lighter;
+
+      & p {
+        font-size: 6vw;
+
+        @include desktop {
+          font-size: 3vw;
+        }
+      }
+      & span {
+        display: flex;
+        font-size: 3vw;
+        justify-content: flex-end;
+        margin-right: 2vw;
+
+        @include desktop {
+          font-size: 1.5vw;
+        }
+      }
+
+      &:first-child {
+        margin-top: 8vh;
+      }
+      &:not(:last-child) {
+        margin-bottom: 30vh;
+      }
+    }
+  }
+
+  .about-pros {
+    margin: mobile-vh(400px) 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-shadow: none;
+    color: var(---lightBlue);
+
+    @include desktop {
+      height: 120vh;
+    }
+
+    span {
+      font-size: 8vw;
+      padding: 1vw;
+    }
+    span:hover {
+      cursor: default;
+    }
+  }
+
+  .our-history {
+    height: 140vh;
+    padding: 0 3.6vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(---lightBlue);
+
+    @include desktop {
+      height: 100vh;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    & .history-container {
+      padding: 2vh 2vw;
+      background-color: var(--bgBlueOpacity);
+      backdrop-filter: blur(2px);
+    }
+
+    & h3 {
+      font-size: 12vw;
+      text-transform: uppercase;
+      margin: 2vh 0;
+      border-bottom: 2px solid var(--neonBlue);
+
+      @include desktop {
+        font-size: 5vw;
+      }
+    }
+    & p {
+      font-weight: lighter;
+      font-size: 7vw;
+
+      @include desktop {
+        font-size: 2.5vw;
+      }
+    }
+    & span {
+      display: block;
+    }
+    & span:not(:last-child) {
+      margin-bottom: 4vh;
     }
   }
 
   .slider {
     overflow: hidden;
-    margin-bottom: 250px;
-  }
+    margin: 250px 0;
 
-  .slider-header {
-    padding-top: desktop-vw(50px);
-    text-transform: uppercase;
-    font-size: 34px;
+    .slider-header {
+      display: flex;
+      justify-content: center;
+      padding-top: desktop-vw(50px);
+      text-transform: uppercase;
 
-    p:first-child {
-      font-size: 14px;
+      p:first-child {
+        font-size: 8vw;
+        margin-bottom: 2vh;
+        border-bottom: 2px solid var(--neonBlue);
+
+        @include desktop {
+          font-size: 4vw;
+        }
+      }
     }
   }
 
   .slide-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2vh;
+    padding: 2vh 2vw;
+    gap: 8vw;
     text-transform: uppercase;
+    font-size: 4vw;
     font-weight: 700;
     padding-right: desktop-vw(10px);
     user-select: none;
-    cursor: pointer;
+
+    @include desktop {
+      font-size: 1.2vw;
+    }
+
+    .slide-buttons button {
+      cursor: pointer;
+      transition-duration: 0.3s;
+    }
+
+    button:first-child:hover {
+      color: var(--neonBlue);
+      transform: translatex(-12px);
+      transition-duration: 0.3s;
+    }
+    button:last-child:hover {
+      color: var(--neonBlue);
+      transform: translatex(12px);
+      transition-duration: 0.3s;
+    }
   }
 
   .slide {
-    min-width: 33vw;
+    min-width: mobile-vw(220px);
     display: flex;
     flex-direction: column;
+    transition-duration: 0.3s;
+
+    @include desktop {
+      min-width: desktop-vw(500px);
+    }
 
     .slide-inner {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      margin-bottom: 6vh;
       position: relative;
+      color: var(--lightBlue);
+      background-color: var(--bgBlueOpacity);
+      border: 1px solid var(--lightBlue);
+      backdrop-filter: blur(2px);
       overflow: hidden;
-      height: desktop-vw(600px);
+      height: mobile-vh(300px);
+      width: mobile-vw(180px);
+      transition-duration: 0.3s;
       cursor: none;
 
-      .slide-title {
-        font-size: desktop-vw(25px);
-        font-weight: 900;
-        text-transform: uppercase;
-        padding-bottom: desktop-vw(25px);
+      @include desktop {
+        height: desktop-vh(550px);
+        width: desktop-vw(350px);
       }
 
-      .slide-text {
-        font-size: desktop-vw(16px);
-        font-weight: 400;
-        padding-bottom: desktop-vw(25px);
+      .number {
+        z-index: 1;
+        font-weight: bold;
+        font-size: 10vw;
+        padding: mobile-vh(6px) mobile-vw(6px);
+
+        @include desktop {
+          padding: mobile-vh(3px) mobile-vw(3px);
+          font-size: 4vw;
+        }
+      }
+
+      .details {
+        z-index: 1;
+        font-weight: lighter;
+        font-size: 6vw;
+        padding: mobile-vh(6px) mobile-vw(6px);
+        justify-content: flex-start;
+        background-color: var(--navBackground);
+        box-shadow: 0px -12px 51px 50px var(--navBackground);
+        -webkit-box-shadow: 0px -12px 51px 50px var(--navBackground);
+        -moz-box-shadow: 0px -12px 51px 50px var(--navBackground);
+
+        @include desktop {
+          padding: mobile-vh(3px) mobile-vw(3px);
+          font-size: 2.5vw;
+        }
       }
 
       .slide-img {
         position: absolute;
+        opacity: 0.8;
         top: 50%;
         left: 50%;
-        height: 50%;
-        min-width: 50%;
+        height: 100%;
+        min-width: 100%;
         transform: translate(-50%, -50%);
         object-fit: cover;
 
         > div {
           height: 100%;
+        }
+      }
+    }
+
+    .slide-inner:hover {
+      color: var(--neonBlue);
+      box-shadow: 0 0 0.2rem var(--lightBlue), 0 0 0.2rem var(--lightBlue),
+        0 0 2rem var(--neonBlue), 0 0 0.8rem var(--neonBlue),
+        0 0 2.8rem var(--neonBlue), inset 0 0 1.3rem var(--neonBlue);
+      transition-duration: 0.3s;
+
+      .slide-img {
+        opacity: 0.4;
+      }
+    }
+  }
+
+  .device {
+    height: 150vh;
+    width: 80vw;
+    margin-left: 4vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--lightBlue);
+
+    @include desktop {
+      height: 100vh;
+      width: 50vw;
+    }
+
+    div {
+      padding: 2vh 2vw;
+      background-color: var(--bgBlueOpacity);
+      backdrop-filter: blur(2px);
+    }
+
+    p {
+      text-transform: uppercase;
+      font-size: 10vw;
+      border-bottom: 2px solid var(--neonBlue);
+      margin-bottom: 2vh;
+
+      @include desktop {
+        font-size: 4vw;
+      }
+    }
+
+    ul {
+      color: var(---lightBlue);
+      font-weight: lighter;
+      font-size: 6vw;
+
+      @include desktop {
+        font-size: 2vw;
+      }
+
+      li:not(:last-child) {
+        margin-bottom: 4vh;
+      }
+      li span {
+        color: var(--neonBlue);
+      }
+    }
+  }
+
+  .choose-plan {
+    height: 140vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    color: var(---lightBlue);
+
+    @include desktop {
+      height: 120vh;
+    }
+
+    .plans-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2vh;
+      margin: 4vh 4vw;
+      width: 80vw;
+      padding: 2vh 2vw;
+      background-color: var(--bgBlueOpacity);
+      backdrop-filter: blur(2px);
+
+      @include desktop {
+        width: 50vw;
+        margin: 2vh 2vw;
+      }
+
+      .title {
+        text-align: center;
+        font-size: 10vw;
+
+        @include desktop {
+          font-size: 5.2vw;
+        }
+      }
+
+      .plans-array {
+        display: flex;
+        justify-content: center;
+        gap: 2vw;
+        font-size: 4vw;
+        font-weight: lighter;
+        text-transform: uppercase;
+        margin-bottom: 2vh;
+
+        @include desktop {
+          font-size: 2vw;
+        }
+
+        button {
+          padding: 0 1vw;
+          border-bottom: 2px solid rgb(0, 0, 0, 0);
+          transition-duration: 0.3s;
+
+          &:nth-child(1) {
+            color: var(--neonBlue);
+
+            &:hover,
+            &:focus {
+              border-bottom: 2px solid;
+            }
+          }
+          &:nth-child(2) {
+            color: var(--neonGreen);
+
+            &:hover,
+            &:focus {
+              border-bottom: 2px solid;
+            }
+          }
+          &:nth-child(3) {
+            color: var(--neonPink);
+
+            &:hover,
+            &:focus {
+              border-bottom: 2px solid;
+            }
+          }
+        }
+      }
+
+      .plan-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+
+        .characteristics {
+          font-weight: lighter;
+          font-size: 4vw;
+          margin-left: 1vw;
+          padding: 0 2vw;
+
+          @include desktop {
+            font-size: 2vw;
+          }
+
+          ul {
+            list-style: square;
+          }
+
+          li:not(:last-child) {
+            margin-bottom: 2.4vh;
+          }
+        }
+
+        .price {
+          text-align: center;
+          font-weight: bold;
+          font-size: 16vw;
+
+          @include desktop {
+            font-size: 8vw;
+          }
+
+          span {
+            font-weight: lighter;
+            font-size: 4vw;
+
+            @include desktop {
+              font-size: 2vw;
+            }
+          }
+        }
+      }
+      .select-plan {
+        text-align: center;
+        font-size: 6vw;
+        letter-spacing: 0.4vw;
+        text-transform: uppercase;
+
+        @include desktop {
+          font-size: 3vw;
+        }
+
+        button {
+          background-color: var(--neonBlue);
+          padding: 1vh 8vw;
+          transition-duration: 0.3s;
+
+          &:hover {
+            color: var(--neonBlue);
+            background-color: var(--lightBlue);
+            transition-duration: 0.3s;
+          }
+        }
+      }
+    }
+  }
+
+  .billing-information {
+    height: 140vh;
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+
+    @include desktop {
+      height: 120vh;
+      width: 60vw;
+    }
+
+    .billing-container {
+      max-width: 100%;
+      padding: 2vh 2vw;
+      background-color: var(--bgBlueOpacity);
+      backdrop-filter: blur(2px);
+
+      .plan-information {
+        text-align: center;
+        color: var(--neonBlue);
+        padding: 0;
+
+        p:nth-child(1) {
+          color: var(--lightBlue);
+          font-size: 8vw;
+
+          @include desktop {
+            font-size: 4vw;
+          }
+        }
+        p:nth-child(2) {
+          font-weight: lighter;
+          font-size: 4vw;
+
+          @include desktop {
+            font-size: 3vw;
+          }
+        }
+        p:nth-child(3) {
+          font-size: 10vw;
+          padding: 2vh 0;
+
+          @include desktop {
+            font-size: 4vw;
+          }
+
+          span {
+            padding: 2vh 0;
+            font-size: 5vw;
+
+            @include desktop {
+              font-size: 1.5vw;
+            }
+          }
+        }
+      }
+
+      .card-information {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2vw;
+
+        @include desktop {
+          gap: 1vw;
+        }
+
+        & > * {
+          font-size: 4vw;
+          font-weight: lighter;
+          display: flex;
+          align-items: center;
+          height: 100%;
+
+          @include desktop {
+            font-size: 1.2vw;
+          }
+
+          input:not(:first-child) {
+            margin-left: 1vw;
+          }
+
+          input::-webkit-outer-spin-button,
+          input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+          /* input[type-number] {
+            -moz-appearance: textfield;
+          } */
+
+          input,
+          select {
+            padding: 1.4vh 1.4vw;
+            text-transform: uppercase;
+            background-color: var(--neonBlue);
+          }
+        }
+
+        .expiration {
+          input {
+            text-align: center;
+            width: 10vw;
+          }
+        }
+        .cvc {
+          input {
+            text-align: center;
+            width: 12vw;
+          }
+        }
+      }
+
+      .user-information {
+        margin: 4vh 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1vw;
+        font-size: 3vw;
+
+        @include desktop {
+          font-size: 1vw;
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+        /* input[type-number] {
+          -moz-appearance: textfield;
+        } */
+
+        input {
+          padding: 1.4vh 1.4vw;
+          text-transform: uppercase;
+          background-color: var(--neonBlue);
+        }
+      }
+
+      button {
+        width: 100%;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 5vw;
+        padding: 1vh 0;
+        background-color: var(--neonBlue);
+        transition-duration: 0.3s;
+
+        @include desktop {
+          display: flex;
+          width: 50%;
+          justify-content: center;
+          margin-left: auto;
+          margin-right: auto;
+          font-size: 2.5vw;
+        }
+
+        &:hover {
+          color: var(--neonBlue);
+          background-color: var(--lightBlue);
+          transition-duration: 0.3s;
         }
       }
     }

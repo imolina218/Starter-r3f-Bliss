@@ -4,18 +4,60 @@
   left: 0;
   width: 100%;
   z-index: 1;
-  // color: var(--white);
-  color: var(--theme-secondary);
+  color: var(--lightBlue);
+  text-transform: uppercase;
   padding: mobile-vw(20px) 0;
+  background-color: var(--navBackground);
+  backdrop-filter: blur(2px);
 
   @include desktop {
-    padding: desktop-vw(40px) 0;
+    padding: desktop-vw(10px) 0;
   }
 
   .head {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     position: relative;
     z-index: 2;
+
+    button img {
+      padding: 1.5vw;
+      background-color: var(--neonBlue);
+      width: 10vw;
+
+      @include desktop {
+        padding: desktop-vw(6px);
+        width: desktop-vw(60px);
+      }
+    }
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+
+    & p {
+      font-size: 6vw;
+      letter-spacing: 0.2vw;
+      color: var(--neonBlue);
+
+      @include desktop {
+        font-size: desktop-vw(40px);
+      }
+
+      &:hover {
+        cursor: default;
+      }
+    }
+
+    & img {
+      background-color: none;
+      width: mobile-vw(30px);
+
+      @include desktop {
+        width: desktop-vw(50px);
+      }
+    }
   }
 }

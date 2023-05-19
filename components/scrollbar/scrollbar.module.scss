@@ -16,11 +16,11 @@
   .thumb {
     min-height: desktop-vw(48px);
     width: desktop-vw(8px);
-    background-color: var(--red);
+    background-color: var(--neonBlue);
     position: absolute;
     right: desktop-vw(8px);
     border-radius: desktop-vw(4px);
-    border: desktop-vw(1px) solid var(--black);
+    border: desktop-vw(1px) solid var(--neonBlue);
     cursor: grab;
   }
 

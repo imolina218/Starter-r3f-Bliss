@@ -5,21 +5,21 @@
 // --theme-{name}: applies css variables from theme
 
 // config:
-// you must use colors filled in _colors.scss but any other colors could works
+// you must use colors filled in _colors.scss but any other colors could works but it would be messy
 $themes: (
   'light': (
-    'primary': map.get($colors, 'white'),
-    'secondary': map.get($colors, 'black'),
-    'contrast': map.get($colors, 'red'),
+    'primary': map.get($colors, 'backgroundAlpha'),
+    'secondary': map.get($colors, 'lightBlue'),
+    'contrast': map.get($colors, 'neonBlue'),
   ),
   'dark': (
-    'primary': map.get($colors, 'black'),
-    'secondary': map.get($colors, 'white'),
-    'contrast': map.get($colors, 'red'),
+    'primary': map.get($colors, 'lightBlue'),
+    'secondary': map.get($colors, 'neonBlue'),
+    /* 'contrast': map.get($colors, 'red'), */
   ),
 );
 
-// internal process, do not touch
+// internal process, do not touch !!!
 @each $name, $theme in $themes {
   .theme-#{$name} {
     @each $name, $color in $theme {

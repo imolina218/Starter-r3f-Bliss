@@ -74,8 +74,8 @@ function MyApp({ Component, pageProps }) {
     <>
       {debug && (
         <>
-          <GridDebugger />
-          <Stats />
+          {/* <GridDebugger />
+          <Stats /> */}
         </>
       )}
       {/* Google Tag Manager - Global base code */}

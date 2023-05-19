@@ -1,0 +1,16 @@
+.canvas {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  background-color: var(--background);
+  position: fixed;
+  z-index: -1;
+}
+
+/* 
+import extension from '@theatre/r3f/dist/extension'
+import studio from '@theatre/studio'
+
+studio.initialize()
+studio.extend(extension) 
+*/

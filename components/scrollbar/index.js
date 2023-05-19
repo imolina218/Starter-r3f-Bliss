@@ -38,7 +38,7 @@ export function Scrollbar({}) {
       const progress = clamp(0, startProgress + deltaY / innerHeight, 1)
       lenis.scrollTo(progress * lenis.limit, { immediate: true })
       lenis.isScrolling = false
-      console.log(lenis.targetScroll)
+      //console.log(lenis.targetScroll)
     },
     [lenis, clicked, windowHeight, innerHeight, startPoint]
   )
