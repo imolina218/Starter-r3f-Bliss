@@ -1,8 +1,10 @@
 import cn from 'clsx'
+import { Lottie } from 'components/lottie'
 import { Navigation } from 'components/navigation'
 import { useStore } from 'lib/store'
 import { forwardRef } from 'react'
 import { shallow } from 'zustand/shallow'
+import animationData from '../../public/hamburguer.json'
 import s from './header.module.scss'
 
 export const Header = forwardRef((_, ref) => {
@@ -30,7 +32,13 @@ export const Header = forwardRef((_, ref) => {
             setNavIsOpen(!navIsOpen)
           }}
         >
-          <img src="./hamburguesa.svg" alt="menu" />
+          <Lottie
+            animation={animationData}
+            autoplay={false}
+            loop={false}
+            className={s.lottie}
+            clicked={navIsOpen}
+          />
         </button>
         {/* <div>
           <Link href="/">home</Link>/<Link href="/gsap">gsap</Link>/

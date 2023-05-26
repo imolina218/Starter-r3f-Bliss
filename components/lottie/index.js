@@ -6,6 +6,7 @@ export function Lottie({
   speed = 1,
   loop = true,
   autoplay = true,
+  clicked = false,
   className,
 }) {
   const lottieRef = useRef(null)
@@ -43,12 +44,12 @@ export function Lottie({
   }, [lottie])
 
   useEffect(() => {
-    if (animator.current && inView) {
-      animator.current?.play()
+    if (animator.current && clicked) {
+      animator.current?.playSegments([0, 16], true)
     } else {
-      animator.current?.pause()
+      animator.current?.playSegments([16, 28], true)
     }
-  }, [animator.current, inView])
+  }, [animator.current, clicked])
 
   return (
     <div

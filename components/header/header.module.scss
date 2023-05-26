@@ -21,17 +21,24 @@
     position: relative;
     z-index: 2;
 
-    button img {
-      padding: 1.5vw;
+    button {
       background-color: var(--neonBlue);
-      width: 10vw;
+      color: white;
+      width: mobile-vw(50px);
+      height: mobile-vh(40px);
 
       @include desktop {
-        padding: desktop-vw(6px);
-        width: desktop-vw(60px);
+        width: desktop-vw(100px);
+        height: desktop-vh(80px);
       }
     }
   }
+
+  /* .lottie {
+    background-color: red;
+    width: 100%;
+    height: 100%;
+  } */
 
   .brand {
     display: flex;

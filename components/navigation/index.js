@@ -12,12 +12,11 @@ export function Navigation() {
     shallow
   )
   const router = useRouter()
+  const onRouteChange = () => {
+    setNavIsOpen(false)
+  }
 
   useEffect(() => {
-    const onRouteChange = () => {
-      setNavIsOpen(false)
-    }
-
     router.events.on('routeChangeStart', onRouteChange)
 
     return () => {
@@ -27,10 +26,18 @@ export function Navigation() {
 
   return (
     <div className={cn(s.navigation, !navIsOpen && s.closed)}>
-      <Link href="#hero">bliss</Link>
-      <Link href="#history">about us</Link>
-      <Link href="#vertical">reviews</Link>
-      <Link href="#plan">plans</Link>
+      <Link href="#hero" onClick={onRouteChange}>
+        bliss
+      </Link>
+      <Link href="#history" onClick={onRouteChange}>
+        about us
+      </Link>
+      <Link href="#vertical" onClick={onRouteChange}>
+        reviews
+      </Link>
+      <Link href="#plan" onClick={onRouteChange}>
+        plans
+      </Link>
     </div>
   )
 }
