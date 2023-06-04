@@ -31,10 +31,55 @@ const details = [
   },
 ]
 
+const plans = [
+  [
+    'Beginner',
+    [
+      '10 GB/s symetryc optic fiber',
+      'Ethernet 2.4 GHz and 5.4 GHz',
+      'Wi-Fi 2.4 GHz',
+      'VPN and proxys not included',
+      42,
+      [0, 183, 202],
+    ],
+  ],
+  [
+    'Enhance',
+    [
+      '50 GB/s symetryc optic fiber ',
+      'Ethernet 2.4 GHz and 5.4 GHz  ',
+      'Wi-Fi 5.4 GHz',
+      'VPN and proxys included ',
+      64,
+      [0, 202, 0],
+    ],
+  ],
+  [
+    'Ultimate',
+    [
+      '100 GB/s symetryc optic fiber ',
+      'Ethernet 2.4 GHz, 5.4 GHz and 6 GHz',
+      'Wi-Fi 5.4 GHz and 6e',
+      'VPN and proxys included  ',
+      99,
+      [242, 0, 112],
+    ],
+  ],
+]
+
 export default function Home() {
   const [progres, setProgres] = useState(0)
   const sequenceRef = useRef([1, [0, 2]])
-  const [prevPosition, setPrevPosition] = useState(0)
+  const [plan, setPlan] = useState(plans[0])
+
+  const handleScrollToView = () => {
+    const purchase = document.getElementById('purchase-section')
+    purchase.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  const handlePlan = (e) => {
+    setPlan(plans[e.target.id])
+  }
 
   useLenis(({ progress }) => {
     const roundedProgress = progress.toFixed(2)
@@ -302,39 +347,56 @@ export default function Home() {
             <p className={s['title']}>Choose Your Plan</p>
 
             <div className={s['plans-array']}>
-              <button className={s['plan-button']}>beginner</button>
-              <button className={s['plan-button']}>enhance</button>
-              <button className={s['plan-button']}>ultimate</button>
+              <button id="0" className={s['plan-button']} onClick={handlePlan}>
+                beginner
+              </button>
+              <button id="1" className={s['plan-button']} onClick={handlePlan}>
+                enhance
+              </button>
+              <button id="2" className={s['plan-button']} onClick={handlePlan}>
+                ultimate
+              </button>
             </div>
 
             <div className={s['plan-container']}>
               <div className={s['characteristics']}>
                 <ul>
-                  <li> 10 GB/s symetryc optic fiber</li>
-                  <li> Ethernet 2.4 GHz and 5.4 GHz </li>
-                  <li> Wi-Fi 2.4 GHz</li>
-                  <li> VPN and proxys not included </li>
+                  <li> {plan[1][0]} </li>
+                  <li> {plan[1][1]} </li>
+                  <li> {plan[1][2]} </li>
+                  <li> {plan[1][3]} </li>
                 </ul>
               </div>
               <div className={s['price']}>
                 <p>
-                  $42<span>/mo.</span>
+                  ${plan[1][4]}
+                  <span>/mo.</span>
                 </p>
               </div>
             </div>
             <div className={s['select-plan']}>
-              <button>select plan</button>
+              <button onClick={handleScrollToView}>select plan</button>
             </div>
           </div>
         </div>
 
-        <div className={s['billing-information']}>
+        <div id="purchase-section" className={s['billing-information']}>
           <div className={s['billing-container']}>
             <div className={s['plan-information']}>
               <p>Billing Information</p>
-              <p>Beginner plan</p>
               <p>
-                $42<span>/mo.</span>
+                <span
+                  style={{
+                    color: `rgb(${plan[1][5][0]}, ${plan[1][5][1]}, ${plan[1][5][2]})`,
+                  }}
+                >
+                  {plan[0]}
+                </span>{' '}
+                plan
+              </p>
+              <p>
+                ${plan[1][4]}
+                <span>/mo.</span>
               </p>
             </div>
 
@@ -356,29 +418,38 @@ export default function Home() {
               </div>
 
               <div className={s['card-name']}>
-                <label htmlFor="">Name:</label>
-                <input type="text" />
+                <label htmlFor="card-name">Name:</label>
+                <input type="text" id="card-name" name="card-name" />
               </div>
               <div className={s['card-number']}>
-                <label htmlFor="">Card Number:</label>
-                <input type="number" />
+                <label htmlFor="card-number">Card Number:</label>
+                <input type="number" id="card-number" name="card-number" />
               </div>
               <div className={s['expiration']}>
-                <label htmlFor="">Expiration:</label>
-                <input type="number" placeholder="mm" />
-                <input type="number" placeholder="yy" />
+                <label htmlFor="expiration">Expiration:</label>
+                <input
+                  type="number"
+                  placeholder="mm"
+                  id="expiration"
+                  name="expiration"
+                />
+                <input type="number" placeholder="yy" name="expiration" />
               </div>
               <div className={s['cvc']}>
-                <label htmlFor="">CVC/CVV:</label>
-                <input type="number" placeholder="- - -" />
+                <label htmlFor="cvv">CVC/CVV:</label>
+                <input type="number" placeholder="- - -" id="cvv" name="cvv" />
               </div>
             </form>
             <form className={s['user-information']}>
-              <input type="text" placeholder="full name" />
-              <input type="text" placeholder="city" />
-              <input type="number" placeholder="zip code" />
-              <input type="text" placeholder="address" />
-              <input type="number" placeholder="phone number" />
+              <input type="text" placeholder="full name" name="full-name" />
+              <input type="text" placeholder="city" name="city" />
+              <input type="number" placeholder="zip code" name="zip-code" />
+              <input type="text" placeholder="address" name="adress" />
+              <input
+                type="number"
+                placeholder="phone number"
+                name="phone-number"
+              />
             </form>
 
             <button>purchase</button>

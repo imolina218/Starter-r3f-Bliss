@@ -1,7 +1,7 @@
 import { NextSeo } from 'next-seo'
 import NextHead from 'next/head'
 
-export function CustomHead({ title = '', description, image, keywords }) {
+export function CustomHead({ title = 'Bliss', description, image, keywords }) {
   return (
     <>
       <NextHead>
@@ -81,7 +81,7 @@ export function CustomHead({ title = '', description, image, keywords }) {
           ],
           defaultImageWidth: 1200,
           defaultImageHeight: 630,
-          site_name: '',
+          site_name: 'Bliss',
         }}
         twitter={{
           handle: '@studiofreight',

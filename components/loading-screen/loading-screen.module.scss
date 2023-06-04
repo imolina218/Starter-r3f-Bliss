@@ -1,0 +1,38 @@
+.hidden {
+  display: none;
+  opacity: 0;
+}
+.loading-container {
+  display: none;
+  color: var(--neonBlue);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background);
+}
+
+.loading {
+  font-size: mobile-vw(40px);
+  width: 20vw;
+  height: 35vh;
+  gap: 2vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @include desktop {
+    font-size: desktop-vw(60px);
+  }
+
+  .progress-bar {
+    height: desktop-vh(10px);
+    background-color: var(--neonBlue);
+    box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem var(--neonBlue),
+      0 0 0.8rem var(--neonBlue), 0 0 2.8rem var(--neonBlue),
+      inset 0 0 1.3rem var(--neonBlue);
+  }
+}

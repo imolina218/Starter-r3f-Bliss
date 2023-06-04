@@ -23,9 +23,16 @@
     height: 6vmin;
     width: 6vmin;
     margin-right: 0.4vw;
+    transition-duration: 0.3s;
 
-    &:hover {
+    &:hover,
+    :focus {
       cursor: pointer;
+
+      g {
+        transition-duration: 0.3s;
+        fill: var(--neonBlue);
+      }
     }
   }
   .company-info span {
