@@ -64,12 +64,6 @@
     "*.js": "eslint --cache --fix",
     "*.{js,css,scss,md}": "prettier --write"
   },
-  "pnpm": {
-    "overrides": {
-      "throttle-debounce": "5.0.0",
-      "@studio-freight/tempus": "0.0.36"
-    }
-  },
   "size-limit": [
     {
       "path": ".next/static/chunks/**/*.js"
