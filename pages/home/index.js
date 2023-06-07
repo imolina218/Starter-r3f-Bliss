@@ -1,4 +1,5 @@
 import { useLenis } from '@studio-freight/react-lenis'
+import { Form } from 'components/form'
 import { Image } from 'components/image'
 import { Marquee } from 'components/marquee'
 import { MarqueeScroll } from 'components/marquee-scroll'
@@ -400,59 +401,7 @@ export default function Home() {
               </p>
             </div>
 
-            <form className={s['card-information']}>
-              <div className={s['payment-network']}>
-                <select name="select">
-                  <option value="american express">american express</option>
-                  <option value="visa">visa</option>
-                  <option value="discover">discover</option>
-                  <option value="mastercard">mastercard</option>
-                </select>
-
-                {/* <input list="cards" id="myCard" name="myCard" />
-                <datalist id="cards">
-                  <option value="mastercard" selected></option>
-                  <option value="discover"></option>
-                  <option value="visa"></option>
-                </datalist> */}
-              </div>
-
-              <div className={s['card-name']}>
-                <label htmlFor="card-name">Name:</label>
-                <input type="text" id="card-name" name="card-name" />
-              </div>
-              <div className={s['card-number']}>
-                <label htmlFor="card-number">Card Number:</label>
-                <input type="number" id="card-number" name="card-number" />
-              </div>
-              <div className={s['expiration']}>
-                <label htmlFor="expiration">Expiration:</label>
-                <input
-                  type="number"
-                  placeholder="mm"
-                  id="expiration"
-                  name="expiration"
-                />
-                <input type="number" placeholder="yy" name="expiration" />
-              </div>
-              <div className={s['cvc']}>
-                <label htmlFor="cvv">CVC/CVV:</label>
-                <input type="number" placeholder="- - -" id="cvv" name="cvv" />
-              </div>
-            </form>
-            <form className={s['user-information']}>
-              <input type="text" placeholder="full name" name="full-name" />
-              <input type="text" placeholder="city" name="city" />
-              <input type="number" placeholder="zip code" name="zip-code" />
-              <input type="text" placeholder="address" name="adress" />
-              <input
-                type="number"
-                placeholder="phone number"
-                name="phone-number"
-              />
-            </form>
-
-            <button>purchase</button>
+            <Form />
           </div>
         </div>
       </section>

@@ -641,6 +641,10 @@
           color: var(--lightBlue);
           font-size: 4vw;
 
+          /* span:nth-child(1) {
+            text-transform: uppercase;
+          } */
+
           @include desktop {
             font-size: 3vw;
           }
@@ -662,117 +666,6 @@
               font-size: 1.5vw;
             }
           }
-        }
-      }
-
-      .card-information {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        gap: 2vw;
-
-        @include desktop {
-          gap: 1vw;
-        }
-
-        & > * {
-          font-size: 4vw;
-          font-weight: lighter;
-          display: flex;
-          align-items: center;
-          height: 100%;
-
-          @include desktop {
-            font-size: 1.2vw;
-          }
-
-          input:not(:first-child) {
-            margin-left: 1vw;
-          }
-
-          input::-webkit-outer-spin-button,
-          input::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-          }
-          /* input[type-number] {
-            -moz-appearance: textfield;
-          } */
-
-          input,
-          select {
-            padding: 1.4vh 1.4vw;
-            text-transform: uppercase;
-            background-color: var(--neonBlue);
-          }
-        }
-
-        .expiration {
-          input {
-            text-align: center;
-            width: 10vw;
-          }
-        }
-        .cvc {
-          input {
-            text-align: center;
-            width: 12vw;
-          }
-        }
-      }
-
-      .user-information {
-        margin: 4vh 0;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        gap: 1vw;
-        font-size: 3vw;
-
-        @include desktop {
-          font-size: 1vw;
-        }
-
-        input::-webkit-outer-spin-button,
-        input::-webkit-inner-spin-button {
-          -webkit-appearance: none;
-          margin: 0;
-        }
-        /* input[type-number] {
-          -moz-appearance: textfield;
-        } */
-
-        input {
-          padding: 1.4vh 1.4vw;
-          text-transform: uppercase;
-          background-color: var(--neonBlue);
-        }
-      }
-
-      button {
-        width: 100%;
-        text-align: center;
-        text-transform: uppercase;
-        font-size: 5vw;
-        padding: 1vh 0;
-        background-color: var(--neonBlue);
-        transition-duration: 0.3s;
-
-        @include desktop {
-          display: flex;
-          width: 50%;
-          justify-content: center;
-          margin-left: auto;
-          margin-right: auto;
-          font-size: 2.5vw;
-        }
-
-        &:hover {
-          color: var(--neonBlue);
-          background-color: var(--lightBlue);
-          transition-duration: 0.3s;
         }
       }
     }
