@@ -1,8 +1,7 @@
 .home {
   // height: 300vh;
   background-color: var(--backgroundAlpha);
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;
+  z-index: 10;
 
   .hero {
     height: 80vh;
