@@ -16,7 +16,7 @@ import Router from 'components/modem'
 import SphereCore from 'components/sphere-core'
 import Tiles from 'components/tiles'
 import { useEffect, useRef } from 'react'
-import demoProjectState from '../../public/state.json'
+import demoProjectState from '../../public/State.json'
 import s from './experience.module.scss'
 
 export default function Experience({ ...props }) {
