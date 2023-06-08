@@ -69,6 +69,7 @@ const plans = [
 ]
 
 export default function Home() {
+  /* eslint-disable */
   const [progres, setProgres] = useState(0)
   const sequenceRef = useRef([1, [0, 2]])
   const [plan, setPlan] = useState(plans[0])
@@ -298,7 +299,7 @@ export default function Home() {
                   <button onClick={scrollNext}>next &gt; &gt;</button>
                 </div>
                 <Slider.Slides ref={emblaRef}>
-                  {details.map(({ image, detail }, idx) => (
+                  {details.map(({ detail }, idx) => (
                     <div className={s['slide']} key={`slide-item-${idx}`}>
                       <div className={s['slide-inner']}>
                         <Image

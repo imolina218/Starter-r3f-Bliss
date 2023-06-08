@@ -1,7 +1,7 @@
 import { /*useAnimations, */ useGLTF } from '@react-three/drei'
 //import { useEffect } from 'react'
 
-export default function Tiles({ ...props }) {
+export default function Tiles() {
   const tiles = useGLTF('./Tiles.glb')
   //const animations = useAnimations(tiles.animations, tiles.scene)
 

@@ -13,7 +13,7 @@ export function Lottie({
   const animator = useRef(null)
   const [lottie, setLottie] = useState()
 
-  const { setRef, inView } = useIsVisible({
+  const { setRef /* inView */ } = useIsVisible({
     threshold: 0,
   })
   const readyState = useDocumentReadyState()

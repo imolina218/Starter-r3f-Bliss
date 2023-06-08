@@ -11,14 +11,17 @@ const Slides = forwardRef(({ children, className }, ref) => (
 ))
 Slides.displayName = 'Slides'
 
-function Slider({ children, emblaApi = { autoplay: true }, enabled = true }) {
+function Slider({
+  children,
+  /* emblaApi = { autoplay: true } ,*/ enabled = true,
+}) {
   // eslint-disable-next-line no-unused-vars
   const [_, setScrollSnaps] = useState([])
   const [currentIndex, setCurrentIndex] = useState(0)
-  const autoplay = Autoplay(
+  /* const autoplay = Autoplay(
     { delay: emblaApi?.autoplay?.delay || null },
     (emblaRoot) => emblaRoot.parentElement
-  )
+  ) */
   const [emblaRef, embla] = useEmblaCarousel({ loop: false }, [Autoplay()])
 
   const scrollPrev = useCallback(() => {

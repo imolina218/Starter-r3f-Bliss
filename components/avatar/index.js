@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 
 export default function Avatar({ ...props }) {
   const avatar = useGLTF('./Avatar.glb')
-  const glossyMaterial = avatar.materials[0]
+  //const glossyMaterial = avatar.materials[0]
   const animations = useAnimations(avatar.animations, avatar.scene)
   // console.log(animations.names) check the animations
   const animationName = ['Running', 'Jumping', 'Landing']

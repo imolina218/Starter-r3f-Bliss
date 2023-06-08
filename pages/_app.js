@@ -6,12 +6,11 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import { GTM_ID } from 'lib/analytics'
 import { useStore } from 'lib/store'
-import dynamic from 'next/dynamic'
 import Script from 'next/script'
 import { useEffect } from 'react'
 import 'styles/global.scss'
 
-const Stats = dynamic(
+/* const Stats = dynamic(
   () => import('components/stats').then(({ Stats }) => Stats),
   { ssr: false }
 )
@@ -20,7 +19,7 @@ const GridDebugger = dynamic(
   () =>
     import('components/grid-debugger').then(({ GridDebugger }) => GridDebugger),
   { ssr: false }
-)
+) */
 
 gsap.registerPlugin(ScrollTrigger)
 
