@@ -29,11 +29,11 @@ export function Navigation() {
       <Link href="#hero" onClick={onRouteChange}>
         bliss
       </Link>
-      <Link href="#history" onClick={onRouteChange}>
-        about us
-      </Link>
       <Link href="#vertical" onClick={onRouteChange}>
         reviews
+      </Link>
+      <Link href="#history" onClick={onRouteChange}>
+        about us
       </Link>
       <Link href="#plan" onClick={onRouteChange}>
         plans
