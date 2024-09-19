@@ -9,6 +9,7 @@ import {
 } from '@react-three/postprocessing'
 import { getProject } from '@theatre/core'
 import { PerspectiveCamera, SheetProvider, editable as e } from '@theatre/r3f'
+import AuroraShader from 'components/auroras'
 import Avatar from 'components/avatar'
 import Logo from 'components/bliss-logo'
 import Cubes from 'components/cubes'
@@ -66,6 +67,7 @@ export default function Experience({ ...props }) {
         }}
         dpr={1}
       >
+        <AuroraShader />
         <SheetProvider sheet={mainSheet}>
           <PerspectiveCamera
             theatreKey="Camera"
