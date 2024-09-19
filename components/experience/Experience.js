@@ -19,10 +19,10 @@ import { useEffect, useRef } from 'react'
 import demoProjectState from '../../public/State.json'
 import s from './experience.module.scss'
 
-import { Fluid, useConfig } from '../../fluid'
+// import { Fluid, useConfig } from '../../fluid'
 
 export default function Experience({ ...props }) {
-  const config = useConfig()
+  // const config = useConfig()
   /* const demoSheet = getProject('Demo Project', {
     state: demoProjectState,
   }).sheet('Demo Sheet') */
@@ -126,13 +126,13 @@ export default function Experience({ ...props }) {
             whitePoint={16.0} // optional, default is 11.2
           />
 
-          <Fluid
+          {/* <Fluid
             {...config}
             showBackground={false}
             fluidColor="#000000"
             distortion={1}
             radius={0.1}
-          />
+          /> */}
           {/* <Bloom
             luminanceThreshold={1}
             intensity={1.25}
