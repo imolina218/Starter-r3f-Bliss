@@ -1,10 +1,9 @@
 import { useProgress } from '@react-three/drei'
 import { useEffect, useState } from 'react'
-import s from './loading-screen.module.scss'
 
 export const LoadingScreen = () => {
   const { progress } = useProgress()
-  const [visible, setVisible] = useState('loading-container')
+  const [visible, setVisible] = useState('loadidng-container')
 
   useEffect(() => {
     if (progress === 100) {
@@ -15,10 +14,10 @@ export const LoadingScreen = () => {
   }, [progress])
 
   return (
-    <div id="container" className={s[visible]}>
-      <div className={s['loading']}>
+    <div id="container" className='visible'>
+      <div className={'loading'}>
         <p>{progress.toFixed(0)}%</p>
-        <div className={s['progress-bar']} style={{ width: `${progress}%` }} />
+        <div className={'progress-bar'} style={{ width: `${progress}%` }} />
       </div>
     </div>
   )
