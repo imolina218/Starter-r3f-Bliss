@@ -10,11 +10,12 @@ export const LoadingScreen = () => {
       setTimeout(() => {
         setVisible('hidden')
       }, 2000)
+      console.log(visible)
     }
   }, [progress])
 
   return (
-    <div id="container" className='visible'>
+    <div id="container" className="visible">
       <div className={'loading'}>
         <p>{progress.toFixed(0)}%</p>
         <div className={'progress-bar'} style={{ width: `${progress}%` }} />
