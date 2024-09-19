@@ -9,7 +9,6 @@ import {
 } from '@react-three/postprocessing'
 import { getProject } from '@theatre/core'
 import { PerspectiveCamera, SheetProvider, editable as e } from '@theatre/r3f'
-import AuroraShader from 'components/auroras'
 import Avatar from 'components/avatar'
 import Logo from 'components/bliss-logo'
 import Cubes from 'components/cubes'
@@ -20,7 +19,10 @@ import { useEffect, useRef } from 'react'
 import demoProjectState from '../../public/State.json'
 import s from './experience.module.scss'
 
+import { Fluid, useConfig } from '../../fluid'
+
 export default function Experience({ ...props }) {
+  const config = useConfig()
   /* const demoSheet = getProject('Demo Project', {
     state: demoProjectState,
   }).sheet('Demo Sheet') */
@@ -67,7 +69,7 @@ export default function Experience({ ...props }) {
         }}
         dpr={1}
       >
-        <AuroraShader />
+        {/* <AuroraShader /> */}
         <SheetProvider sheet={mainSheet}>
           <PerspectiveCamera
             theatreKey="Camera"
@@ -122,6 +124,14 @@ export default function Experience({ ...props }) {
             exposure={0.5} // optional, default is 1
             gamma={2.2} // optional, default is 2.2
             whitePoint={16.0} // optional, default is 11.2
+          />
+
+          <Fluid
+            {...config}
+            showBackground={false}
+            fluidColor="#000000"
+            distortion={1}
+            radius={0.1}
           />
           {/* <Bloom
             luminanceThreshold={1}
